@@ -8,8 +8,13 @@ set number
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has("win32")
+    set rtp+=$HOME/.vim/bundle/Vundle.vim/
+    call vundle#begin('$HOME/.vim/bundle/')
+else
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+endif
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
@@ -22,6 +27,6 @@ call vundle#end()
 filetype plugin indent on
 
 "------ Plugin Settings ------
-autocmd vimenter * NERDTree | wincmd w " For NERDTree
+" autocmd vimenter * NERDTree | wincmd w " For NERDTree
 set laststatus=2 " For LightLine
 let g:ale_set_highlights = 0
