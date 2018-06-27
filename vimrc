@@ -31,7 +31,7 @@ call vundle#end()
 filetype plugin indent on
 
 "------ Plugin Settings ------
-let g:ale_set_highlights = 0 " ALE
+" let g:ale_set_highlights = 0 " ALE
 " autocmd vimenter * NERDTree | wincmd w " NERDTree 
 
 "------ Status Line ------
